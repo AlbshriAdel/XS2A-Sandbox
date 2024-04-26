@@ -39,7 +39,7 @@ services:
 
   # XS2A aspsp profile
   xs2a-aspsp-profile:
-    image: gitlab-registry.adorsys.de/adorsys/xs2a/aspsp-xs2a/xs2a-aspsp-profile:${XS2A_ASPSP_PROFILE_VERSION}
+    image: adorsys/xs2a-aspsp-profile:${XS2A_ASPSP_PROFILE_VERSION}
     container_name: xs2a-aspsp-profile
     restart: on-failure
     environment:
@@ -55,7 +55,7 @@ services:
 
   # Consent management
   xs2a-consent-management:
-    image: gitlab-registry.adorsys.de/adorsys/xs2a/aspsp-xs2a/xs2a-consent-management:${XS2A_CONSENT_MANAGEMENT_VERSION}
+    image: adorsys/xs2a-consent-management:${XS2A_CONSENT_MANAGEMENT_VERSION}
     container_name: xs2a-consent-management
     restart: on-failure
     ports:
@@ -128,7 +128,7 @@ services:
 
   # Ledgers
   ledgers:
-    image: gitlab-registry.adorsys.de/adorsys/xs2a/ledgers/ledgers:${LEDGERS_VERSION}
+    image: adorsys/ledgers:${LEDGERS_VERSION}
     container_name: ledgers
     restart: on-failure
     networks:
@@ -173,7 +173,7 @@ services:
 
   # Keycloak as IDP
   ledgers-keycloak:
-    image: gitlab-registry.adorsys.de/adorsys/xs2a/ledgers/keycloak-and-ledgers-plugin:${LEDGERS_VERSION}
+    image: adorsys/ledgers-keycloak:${LEDGERS_VERSION}
     container_name: ledgers-keycloak
     restart: on-failure
     networks:
@@ -318,7 +318,7 @@ services:
 
   # Certificate generator
   certificate-generator:
-    image: gitlab-registry.adorsys.de/adorsys/xs2a/aspsp-xs2a/xs2a-certificate-generator:${XS2A_CONSENT_MANAGEMENT_VERSION}
+    image: adorsys/xs2a-certificate-generator:${XS2A_CONSENT_MANAGEMENT_VERSION}
     restart: on-failure
     ports:
       - "8092:8092"
